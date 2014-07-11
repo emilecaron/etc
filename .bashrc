@@ -13,7 +13,7 @@ export PATH=$HOME/bin:$PATH
 # Gtk themes 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-# Alias general
+# Alias 
 alias ls='ls --color=auto'
 alias l='ls -la'
 alias la='ls -a'
@@ -25,12 +25,10 @@ alias du='du -c -h'
 alias mkdir='mkdir -p -v'
 alias more='less'
 alias ping='ping -c 3'
-
-# Alias perso
 alias dodo='sudo shutdown now'
-alias utc='export http_proxy="proxyweb.utc.fr:3128"'
-alias utcs='export https_proxy="proxyweb.utc.fr:3128"'
 alias hist='history | grep'
+alias svim='sudo vim'
+alias fork='$TERMINAL &'
 
 # enable z
 . ~/src/z/z.sh
