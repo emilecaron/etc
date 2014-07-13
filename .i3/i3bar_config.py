@@ -2,17 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import subprocess
-
 from i3pystatus.core import Status
 
 status = Status(standalone=True, reversed_register=False)
 
-# Load (last minute)
-#status.register("load",
-#        critical_limit=0.5,
-#        format="load:{avg1}%",)
-
-#status.register("cpu_usage_bar")
+# i3 shift
+status.register('i3shift')
 
 # Ping
 status.register('ping')
@@ -38,7 +33,7 @@ status.register("network",
 # Wifi
 status.register("wireless",
     interface="wlp2s0",
-    format_up="{essid} {quality:03.0f}% [{v4}]",
+    format_up="{essid} {quality:3.0f}% [{v4}]",
     color_up="#ffffff")
 
 # Root disk usage
@@ -46,16 +41,9 @@ status.register("disk",
     path="/",
     format="{used}/{total}Go",)
 
-# Shows pulseaudio default sink volume
-#
-# Note: requires libpulseaudio from PyPI 
-# Salesale Pypi demande --allow-unverified et --allow-external
-#status.register("pulseaudio",
-#    format="♪{volume}",)
 
-
-# Tue 30 Jul 11:59:46 PM KW31
+# Date and time 
 status.register("clock",
-    format="%a %-d %b %X KW%V",)
+    format="%a %-d %b %X Week%V",)
 
 status.run()
