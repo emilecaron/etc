@@ -5,6 +5,10 @@ from i3pystatus.core import Status
 
 status = Status(standalone=True, reversed_register=False)
 
+
+# i3 focus
+status.register('i3focus')
+
 # i3 shift
 status.register('i3shift')
 
@@ -20,6 +24,7 @@ status.register("temp",
 
 # Mem use
 status.register("mem",
+        format='{used_mem:4.0f}Mo{percent_used_mem:3.0f}%',
         color="#ffffff")
 
 
