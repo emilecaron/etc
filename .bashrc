@@ -1,9 +1,3 @@
-function parse_git_branch {
-    var=`git branch 2>/dev/null` 
-    echo "($var)"| grep "*" #| cut -n 2 
-}
-
-PS1="\w \$(parse_git_branch)\$ "
 # Add vim as default editor
 export EDITOR=vim
 export TERMINAL=lxterminal
@@ -25,16 +19,17 @@ alias du='du -c -h'
 alias mkdir='mkdir -p -v'
 alias more='less'
 alias ping='ping -c 3'
-alias dodo='sudo shutdown now'
+alias dodo='systemctl halt'
 alias hist='history | grep'
 alias svim='sudo vim'
-alias fork='$TERMINAL &'
+alias fork='$TERMINAL &' #open another terminal in the same repository. So fcking useful
 
 # enable z
 . ~/src/z/z.sh
 
-# enable autoproxy UTC
-. ~/workspace/autoProxy/autoProxy.sh
+# enable autoproxy UTC 
+# (Goodbye compiegne)
+#. ~/workspace/autoProxy/autoProxy.sh
 
 # enable bash completion
 if [ -f /etc/bash_completion ]; then
@@ -42,9 +37,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Prompt
-PS1='\[\e[1;32m\][\u@\h \W]$(parse_git_branch)\$\[\e[0m\]'
-#PS1="$(parse_git_branch) "
+source ~/src/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
 # Arch logo display on start
 [ ! "$UID" = "0" ] && archbey2
-#[ ! "$UID" = "0" ] && fortune | ponysay
