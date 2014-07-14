@@ -150,7 +150,7 @@ bindsym $mod+r mode "resize"
 $execi xrandr --output LVDS --primary
 bar {
     status_command  ~/.i3/i3bar_config.py
-    position        bottom
+    position        top
     workspace_buttons yes
 }
 

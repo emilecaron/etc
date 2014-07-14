@@ -1,7 +1,6 @@
 #! /bin/python3
 # -*- coding: utf-8 -*-
 
-import subprocess
 from i3pystatus.core import Status
 
 status = Status(standalone=True, reversed_register=False)
