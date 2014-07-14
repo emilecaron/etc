@@ -1,0 +1,9 @@
+[user]
+	email = emile.caron@outlook.com
+	name = emilecaron
+[push]
+	default = simple
+[credential]
+	helper = cache
+[core]
+	editor = vim
