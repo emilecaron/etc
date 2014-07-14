@@ -36,6 +36,11 @@ alias fork='$TERMINAL &'
 # enable autoproxy UTC
 . ~/workspace/autoProxy/autoProxy.sh
 
+# enable bash completion
+if [ -f /etc/bash_completion ]; then
+. /etc/bash_completion
+fi
+
 # Prompt
 PS1='\[\e[1;32m\][\u@\h \W]$(parse_git_branch)\$\[\e[0m\]'
 #PS1="$(parse_git_branch) "
