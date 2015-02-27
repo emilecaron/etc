@@ -112,3 +112,10 @@ set ls=2
 
 "Disable swap files
 set noswapfile
+
+"Nerdtree autostart when no file
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"let g:nerdtree_tabs_open_on_console_startup=1
+let NERDTreeMapOpenInTab='<ENTER>'
+map <C-n> :NERDTreeToggle<CR>

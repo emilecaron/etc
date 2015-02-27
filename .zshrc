@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/emile/.oh-my-zsh
+export ZSH=/home/emile/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -46,7 +46,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autopep8 brew pip brew z)
+plugins=(git autopep8 brew pip brew z archlinux)
 
 # User configuration
 
@@ -79,3 +79,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+
+# Utilabisms
+export ANALYSTICK_SETTINGS="/home/emile/workspace/analystick/analystick/config_emile.py"
+
+alias preprod="ssh emile.caron@130.211.88.203"
+alias pgtunnel="echo 'Forwarding preprod:5432 -> localhost:5555' && ssh -L 5555:localhost:5432 emile.caron@130.211.88.203 -N"
+alias sql-console="psql analystick_db"
+alias runserver="authbind --deep python manage.py runserver"
